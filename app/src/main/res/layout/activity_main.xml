@@ -29,31 +29,31 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent/4"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Accueil" />
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent/4"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Donner" />
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent/4"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Recettes" />
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent/4"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Frigo" />
 
         </LinearLayout>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
@@ -61,11 +61,11 @@
     <EditText
         android:id="@+id/editText"
         android:layout_width="406dp"
-        android:layout_height="126dp"
+        android:layout_height="60dp"
         android:layout_marginTop="18dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Search"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
