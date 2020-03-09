@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+
 public class MainActivity extends AppCompatActivity {
 
     ImageButton homeButton;
@@ -29,27 +30,27 @@ public class MainActivity extends AppCompatActivity {
         homeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                setContentView(R.layout.activity_donner);
+                setContentView(R.layout.activity_donner2);
             }
         });
 
         donnerButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-
-                setContentView(R.layout.activity_donner);
+                Intent intent = new Intent(MainActivity.this, DonnerActivity.class);
+                startActivity(intent);
             }
         });
 
         recettesButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                setContentView(R.layout.activity_donner);
+                setContentView(R.layout.activity_donner2);
             }
         });
         frigoButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                setContentView(R.layout.activity_donner);
+                setContentView(R.layout.activity_donner2);
             }
         });
 
