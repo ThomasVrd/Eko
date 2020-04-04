@@ -52,39 +52,43 @@
             android:visibility="visible">
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/ButtonHome"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
+                android:onClick="myClickHandler"
                 android:scaleType="fitCenter"
                 android:visibility="visible"
                 app:srcCompat="@drawable/home" />
 
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/ButtonDonner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
+                android:onClick="myClickHandler"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/bag" />
 
             <ImageButton
-                android:id="@+id/imageButton5"
+                android:id="@+id/ButtonRecettes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
+                android:onClick="myClickHandler"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/heart" />
 
             <ImageButton
-                android:id="@+id/imageButton6"
+                android:id="@+id/ButtonFrigo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
+                android:onClick="myClickHandler"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/kitchen" />
 
@@ -107,7 +111,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
+            <fragment android:name="com.google.android.gms.maps.MapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/map"
+                />
         </LinearLayout>
     </ScrollView>
 
