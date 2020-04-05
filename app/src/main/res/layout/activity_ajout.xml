@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
-                android:onClick="myClickHandler2"
+                android:onClick="myClickHandler3"
                 android:scaleType="fitCenter"
                 android:visibility="visible"
                 app:srcCompat="@drawable/home" />
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
-                android:onClick="myClickHandler2"
+                android:onClick="myClickHandler3"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/bag" />
 
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
-                android:onClick="myClickHandler2"
+                android:onClick="myClickHandler3"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/heart" />
 
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
-                android:onClick="myClickHandler2"
+                android:onClick="myClickHandler3"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/kitchen" />
 
@@ -91,12 +91,39 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <EditText
+                android:id="@+id/EditTextNom"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="textShortMessage"
+                android:text="Nom du produit" />
+            <EditText
+                android:id="@+id/EditTextMarque"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="textShortMessage"
+                android:text="Marque" />
+
+            <EditText
+                android:id="@+id/EditTextQuantite"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:text="Quantité" />
+
+            <EditText
+                android:id="@+id/EditTextDate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="date"
+                android:text="Date de péremption" />
+
             <Button
-                android:id="@+id/ButtonAjouter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="myClickHandler2"
-                android:text="Ajouter un produit" />
+                android:id="@+id/ButtonAjout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:onClick="myClickHandler3"
+                android:text="ajouter" />
         </LinearLayout>
     </ScrollView>
 

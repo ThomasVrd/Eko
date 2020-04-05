@@ -6,15 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class FrigoActivity extends AppCompatActivity {
+public class AjoutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_frigo);
+        setContentView(R.layout.activity_ajout);
     }
 
-    public void myClickHandler2(View view)
+    public void myClickHandler3(View view)
     {
         switch(view.getId())
         {
@@ -37,8 +37,9 @@ public class FrigoActivity extends AppCompatActivity {
                 Intent intent3 = new Intent(getApplicationContext(), FrigoActivity.class);
                 startActivity(intent3);
                 break;
-            case R.id.ButtonAjouter:
-                Intent intent4 = new Intent(getApplicationContext(), AjoutActivity.class);
+            case R.id.ButtonAjout:
+                //ajouter pour bdd
+                Intent intent4 = new Intent(getApplicationContext(), FrigoActivity.class);
                 startActivity(intent4);
                 break;
         }

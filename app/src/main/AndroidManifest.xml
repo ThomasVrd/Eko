@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FrigoActivity"></activity>
+        <activity android:name=".AjoutActivity"></activity>
+        <activity android:name=".FrigoActivity" />
         <activity android:name=".DonnerActivity" />
         <activity android:name=".RecettesActivity" />
         <activity android:name=".MainActivity">
