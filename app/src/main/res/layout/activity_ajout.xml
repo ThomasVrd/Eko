@@ -2,12 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView4"
         android:layout_width="284dp"
         android:layout_height="80dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
-                android:onClick="myClickHandler"
+                android:onClick="myClickHandler3"
                 android:scaleType="fitCenter"
                 android:visibility="visible"
                 app:srcCompat="@drawable/home" />
@@ -48,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
-                android:onClick="myClickHandler"
+                android:onClick="myClickHandler3"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/bag" />
 
@@ -58,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
-                android:onClick="myClickHandler"
+                android:onClick="myClickHandler3"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/heart" />
 
@@ -68,41 +67,63 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
-                android:onClick="myClickHandler"
+                android:onClick="myClickHandler3"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/kitchen" />
 
         </LinearLayout>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Search"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="516dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="405dp"
+        android:layout_height="532dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:text="En fonction de ce que vous aimez"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            <EditText
+                android:id="@+id/EditTextNom"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="textShortMessage"
+                android:text="Nom du produit" />
+            <EditText
+                android:id="@+id/EditTextMarque"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="textShortMessage"
+                android:text="Marque" />
+
+            <EditText
+                android:id="@+id/EditTextQuantite"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:text="Quantité" />
+
+            <EditText
+                android:id="@+id/EditTextDate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="date"
+                android:text="Date de péremption" />
+
+            <Button
+                android:id="@+id/ButtonAjout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:onClick="myClickHandler3"
+                android:text="ajouter" />
         </LinearLayout>
     </ScrollView>
 

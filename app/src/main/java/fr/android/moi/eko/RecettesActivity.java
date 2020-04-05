@@ -8,50 +8,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
-
-public class MainActivity extends AppCompatActivity {
+public class RecettesActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        /*homeButton = (ImageButton) findViewById(R.id.imageButton2);
-        recettesButton = (ImageButton) findViewById(R.id.imageButton5);
-        donnerButton = (ImageButton) findViewById(R.id.imageButton4);
-        frigoButton = (ImageButton) findViewById(R.id.imageButton6);
-
-
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-
-                setContentView(R.layout.activity_donner2);
-            }
-        });
-
-        donnerButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                Intent intent = new Intent(MainActivity.this, DonnerActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        recettesButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-
-                setContentView(R.layout.activity_donner2);
-            }
-        });
-        frigoButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-
-                setContentView(R.layout.activity_donner2);
-            }
-        });*/
-
+        setContentView(R.layout.activity_recettes);
     }
 
-    public void myClickHandler(View view)
+    public void myClickHandler1(View view)
     {
         switch(view.getId())
         {
@@ -76,5 +41,4 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-
 }
