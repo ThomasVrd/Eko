@@ -1,5 +1,6 @@
 package fr.android.moi.eko;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -20,7 +21,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, db_name, null, 1);
-        SQLiteDatabase db = this.getWritableDatabase();
     }
 
     @Override
@@ -32,5 +32,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop table if exists" + table_name);
         onCreate(db);
+    }
+
+    public boolean insertData(String nom, String marque, String quantite, String peremption)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(Produit_nom, nom);
+        contentValues.put(Produit_marque, marque);
+        contentValues.put(Produit_quantite, quantite);
+        contentValues.put(Produit_peremption, peremption);
+        db.beginTransaction();
+        try{
+            long result = db.insert(table_name, null, contentValues);
+            db.setTransactionSuccessful();
+        }
+        finally{
+            db.endTransaction();
+        }
+        return true;
     }
 }
