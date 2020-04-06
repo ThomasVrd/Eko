@@ -23,27 +23,18 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="35301c62-eb63-4057-b8f8-fb741bda4d33">
-        <schema name="main" object-types="dataset trigger, constraint, column, table, view, index" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="35301c62-eb63-4057-b8f8-fb741bda4d33">
-      <console name="Connection" type="STANDARD" schema="main" session="Main" />
+    <connection id="123b16c7-0134-4f3f-9992-ff18151c0e5b">
+      <console name="Connection" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="35301c62-eb63-4057-b8f8-fb741bda4d33" object-ref="schemas/main/tables/Frigo" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="35301c62-eb63-4057-b8f8-fb741bda4d33" />
-  </component>
-  <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="35301c62-eb63-4057-b8f8-fb741bda4d33" dataset="main.Frigo" active-filter-id="EMPTY_FILTER" />
+    <connection id="123b16c7-0134-4f3f-9992-ff18151c0e5b" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -68,13 +59,13 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="35301c62-eb63-4057-b8f8-fb741bda4d33" active="true">
+      <connection id="123b16c7-0134-4f3f-9992-ff18151c0e5b" active="true">
         <database>
           <name value="Connection" />
           <description value="" />
           <database-type value="SQLITE" />
           <config-type value="BASIC" />
-          <database-version value="3.21" />
+          <database-version value="9999.0" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
@@ -83,7 +74,7 @@
           <port value="1234" />
           <database value="database" />
           <files>
-            <file path="C:\Users\marie\AndroidStudioProjects\Eko\emulator-5554\data\data\fr.android.moi.eko\databases\Eko.db" schema="main" />
+            <file path="C:\Users\thoma\Desktop\wetransfer-deab99\Eko2" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />
@@ -284,6 +275,8 @@
           <content-type name="HTML" enabled="true" />
           <content-type name="XHTML" enabled="true" />
           <content-type name="Java" enabled="true" />
+          <content-type name="SQL" enabled="true" />
+          <content-type name="PL/SQL" enabled="true" />
           <content-type name="Groovy" enabled="true" />
           <content-type name="AIDL" enabled="true" />
           <content-type name="YAML" enabled="true" />
