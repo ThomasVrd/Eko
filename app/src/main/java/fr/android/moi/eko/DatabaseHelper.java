@@ -12,7 +12,7 @@ import java.sql.Date;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String db_name = "Eko.db";
-    public static final String table_name = "Frigo";
+    public static final String table_name = "FrigoBis";
     public static final String Produit_ID = "ID";
     public static final String Produit_nom = "Nom";
     public static final String Produit_marque = "Marque";
