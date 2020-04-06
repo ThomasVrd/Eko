@@ -47,20 +47,18 @@ public class AjoutActivity extends AppCompatActivity {
                 startActivity(intent3);
                 break;
             case R.id.ButtonAjout:
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
-                String date = dateFormat.format(editDate.getText());
-                boolean insert = myDb.insertData(editNom.getText().toString(), editMarque.getText().toString(), editQuantite.getText().toString(), date);
-                /*if(insert == true)
-                {
-                    Log.i("insert ?", "oui");
+                boolean insert = myDb.insertData(editNom.getText().toString(), editMarque.getText().toString(), editQuantite.getText().toString(), editDate.getText().toString());
+                if(insert == true) {
+                  /*  Log.i("insert ?", "oui");
                 }
                 else
                 {
                     Log.i("insert ?", "non");
                 }*/
-                Intent intent4 = new Intent(getApplicationContext(), FrigoActivity.class);
-                startActivity(intent4);
-                break;
+                    Intent intent4 = new Intent(getApplicationContext(), FrigoActivity.class);
+                    startActivity(intent4);
+                    break;
+                }//a effacer
         }
     }
 }
