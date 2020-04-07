@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openFile(){
         try{
-            x = new Scanner("C:\\Users\\thoma\\Desktop\\wetransfer-deab99\\Eko2\\app\\src\\data.txt");
+            x = new Scanner("src/data.txt");
         }
         catch(Exception e){
             System.out.println("fichier introuvable");
@@ -52,10 +52,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        System.out.print("dsqdq");
-        openFile();
-        readFile();
-        closefile();
+        Log.e("dsqdq", "azeaze");
+
        // myDb = new DatabaseHelper(this);
     }
 
@@ -66,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.ButtonHome:
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                openFile();
+                readFile();
+                closefile();
                 break;
             case R.id.ButtonDonner:
                 /*Log.i("clique", "ok");
