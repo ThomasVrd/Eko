@@ -13,6 +13,14 @@ public class MainActivity extends AppCompatActivity {
 
     //DatabaseHelper myDb;
 
+    lecture lecteur = new lecture();
+
+    lecteur.openFile();
+    lecteur.readFile();
+    lecteur.closefile();
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -7,10 +7,12 @@ public class lecture {
 
     public void openFile(){
         try{
-            x = new Scanner(new File("data.txt"))
+            x = new Scanner("C:\\Users\\thoma\\Desktop\\wetransfer-deab99\\Eko2\\app\\src\\data.txt");
         }
-        catch(Exception e)
+        catch(Exception e){
             System.out.println("fichier introuvable");
+        }
+
     }
 
     public void readFile(){
