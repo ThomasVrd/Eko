@@ -8,23 +8,54 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
+import java.util.Scanner;
+
 
 public class MainActivity extends AppCompatActivity {
 
+    private Scanner x;
     //DatabaseHelper myDb;
 
     lecture lecteur = new lecture();
 
-    lecteur.openFile();
-    lecteur.readFile();
-    lecteur.closefile();
 
+
+
+    public void openFile(){
+        try{
+            x = new Scanner("C:\\Users\\thoma\\Desktop\\wetransfer-deab99\\Eko2\\app\\src\\data.txt");
+        }
+        catch(Exception e){
+            System.out.println("fichier introuvable");
+        }
+
+    }
+
+    public void readFile(){
+        while(x.hasNext()){
+            String a = x.next();
+            String b = x.next();
+            String c = x.next();
+
+            System.out.printf("%s %s %s\n", a, b, c);
+        }
+    }
+
+    public void closefile(){
+        x.close();
+    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        System.out.print("dsqdq");
+        openFile();
+        readFile();
+        closefile();
        // myDb = new DatabaseHelper(this);
     }
 
