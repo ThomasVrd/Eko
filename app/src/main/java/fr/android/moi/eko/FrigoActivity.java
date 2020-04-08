@@ -4,13 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Scanner;
 
 public class FrigoActivity extends AppCompatActivity {
+    private Scanner x;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,17 +58,28 @@ public class FrigoActivity extends AppCompatActivity {
         TextView editproduit1 = (TextView) findViewById(R.id.produit1);
         String text = "";
         try{
-            InputStream is =this.getAssets().open("data.txt");
+            x = new Scanner(this.getAssets().open("data.txt"));
+            while(x.hasNext()){
+                String a = x.next();
+                String b = x.next();
+                String c = x.next();
+                text = text + a + " " + b + " " + c + " " ;
+            }
+
+            /*InputStream is =this.getAssets().open("data.txt");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
-            is.close();
-            text = new String(buffer);
+            is.close();*/
         }
-        catch(IOException ex)
-        {
-            ex.printStackTrace();
-        }
+        catch(Exception e){
+            Log.e("ad", "aza");
+
+    }
+
+
+
+
         editproduit1.setText(text);
     }
 }

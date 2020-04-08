@@ -18,7 +18,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.Scanner;
+
 public class DonnerActivity extends Activity implements OnMapReadyCallback { //peut etre extends AppCompatActivity
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
