@@ -9,19 +9,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AjoutActivity extends AppCompatActivity {
 
-    //DatabaseHelper myDb;
-   // EditText editNom, editMarque, editQuantite, editDate;
+   EditText editNom, editMarque, editQuantite, editDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajout);
-       // myDb = new DatabaseHelper(this);
     }
 
     public void myClickHandler3(View view)
@@ -48,9 +51,44 @@ public class AjoutActivity extends AppCompatActivity {
                 startActivity(intent3);
                 break;
             case R.id.ButtonAjout:
+                ajouter();
                 Intent intent4 = new Intent(getApplicationContext(), FrigoActivity.class);
                 startActivity(intent4);
                 break;
         }
+    }
+
+    public void ajouter()
+    {
+        editNom = (EditText) findViewById(R.id.EditTextNom);
+        editMarque = (EditText) findViewById(R.id.EditTextMarque);
+        editQuantite = (EditText) findViewById(R.id.EditTextQuantite);
+        editDate = (EditText) findViewById(R.id.EditTextDate);
+        String nom = editNom.getText().toString();
+        String marque = editMarque.getText().toString();
+        String quantite = editQuantite.getText().toString();
+        String date = editDate.getText().toString();
+        try{
+
+            File file = new File("C:\\Users\\marie\\AndroidStudioProjects\\Eko\\app\\src\\main\\assets\\data.txt");
+            if (!file.canWrite()) {
+                file.setWritable(true);
+            }
+
+            if (!file.canExecute()) {
+                file.setExecutable(true);
+            }
+            FileOutputStream os = new FileOutputStream(file, true);
+            os.write(nom.getBytes());
+            os.write(marque.getBytes());
+            os.write(quantite.getBytes());
+            os.write(date.getBytes());
+            os.close();
+        }
+        catch(IOException ex)
+        {
+            ex.printStackTrace();
+        }
+
     }
 }

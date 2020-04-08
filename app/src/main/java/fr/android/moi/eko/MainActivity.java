@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
         String text= "";
         TextView editRead = (TextView) findViewById(R.id.editRead);
         try{
-           // InputStream is = new FileInputStream("/")
             InputStream is =this.getAssets().open("data.txt");
             int size = is.available();
             byte[] buffer = new byte[size];
