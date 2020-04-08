@@ -104,11 +104,6 @@
                 android:id="@+id/text1"
                 android:text="@string/en_fonction_de_ce_que_vous_aimez"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/editRead"
-                android:text="rien"/>
         </LinearLayout>
     </ScrollView>
 

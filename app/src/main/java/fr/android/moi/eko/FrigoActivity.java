@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class FrigoActivity extends AppCompatActivity {
 
@@ -12,6 +16,7 @@ public class FrigoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frigo);
+        readFile();
     }
 
     public void myClickHandler2(View view)
@@ -42,5 +47,24 @@ public class FrigoActivity extends AppCompatActivity {
                 startActivity(intent4);
                 break;
         }
+    }
+
+    public void readFile()
+    {
+        TextView editproduit1 = (TextView) findViewById(R.id.produit1);
+        String text = "";
+        try{
+            InputStream is =this.getAssets().open("data.txt");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            text = new String(buffer);
+        }
+        catch(IOException ex)
+        {
+            ex.printStackTrace();
+        }
+        editproduit1.setText(text);
     }
 }

@@ -97,6 +97,13 @@
                 android:layout_height="wrap_content"
                 android:onClick="myClickHandler2"
                 android:text="Ajouter un produit" />
+
+            <TextView
+                android:id="@+id/produit1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="24sp" />
         </LinearLayout>
     </ScrollView>
 

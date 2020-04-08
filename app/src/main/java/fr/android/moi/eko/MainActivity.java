@@ -24,19 +24,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //openFile();
-        try {
-            readFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        //closefile();
     }
 
-    public void myClickHandler(View view)
-    {
-        switch(view.getId())
-        {
+    public void myClickHandler(View view) {
+        switch (view.getId()) {
             case R.id.ButtonHome:
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
@@ -58,48 +49,4 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-
-
-
-    public void openFile(){
-        try{
-            x = new Scanner("C:\\Users\\marie\\AndroidStudioProjects\\Eko\\data.txt");
-        }
-        catch(Exception e){
-            System.out.println("fichier introuvable");
-        }
-
-    }
-
-    public void readFile() throws IOException {
-
-        String text= "";
-        TextView editRead = (TextView) findViewById(R.id.editRead);
-        try{
-            InputStream is =this.getAssets().open("data.txt");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            text = new String(buffer);
-        }
-        catch(IOException ex)
-        {
-            ex.printStackTrace();
-        }
-        editRead.setText(text);
-       /* x = new Scanner("C:\\Users\\marie\\AndroidStudioProjects\\Eko\\data.txt");
-        while(x.hasNext()){
-            String a = x.next();
-            String b = x.next();
-            String c = x.next();
-
-            //System.out.printf("%s %s %s\n", a, b, c);
-        }*/
-    }
-
-    public void closefile(){
-        x.close();
-    }
-
 }
