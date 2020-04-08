@@ -6,24 +6,30 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Scanner;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private Scanner x;
-    //DatabaseHelper myDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        openFile();
-        readFile();
-        closefile();
-       //myDb = new DatabaseHelper(this);
+        //openFile();
+        try {
+            readFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //closefile();
     }
 
     public void myClickHandler(View view)
@@ -56,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openFile(){
         try{
-            x = new Scanner("C:\\Users\\thoma\\Desktop\\wetransfer-deab99\\Eko2\\app\\src\\data.txt");
+            x = new Scanner("C:\\Users\\marie\\AndroidStudioProjects\\Eko\\data.txt");
         }
         catch(Exception e){
             System.out.println("fichier introuvable");
@@ -64,14 +70,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void readFile(){
+    public void readFile() throws IOException {
+
+        TextView editRead = (TextView) findViewById(R.id.editRead);
+        InputStream is =this.getAssets().open("Data.txt");
+        int size = is.available();
+        byte[] buffer = new byte[size];
+        is.read(buffer);
+        is.close();
+        String text = new String(buffer);
+        editRead.setText(text);
+       /* x = new Scanner("C:\\Users\\marie\\AndroidStudioProjects\\Eko\\data.txt");
         while(x.hasNext()){
             String a = x.next();
             String b = x.next();
             String c = x.next();
 
-            System.out.printf("%s %s %s\n", a, b, c);
-        }
+            //System.out.printf("%s %s %s\n", a, b, c);
+        }*/
     }
 
     public void closefile(){
