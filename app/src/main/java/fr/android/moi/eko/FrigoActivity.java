@@ -63,7 +63,7 @@ public class FrigoActivity extends AppCompatActivity {
                 String a = x.next();
                 String b = x.next();
                 String c = x.next();
-                text = text + a + " " + b + " " + c + " " ;
+                text = text + a + " " + b + " " + c + "\n" ;
             }
 
             /*InputStream is =this.getAssets().open("data.txt");
