@@ -9,8 +9,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -68,22 +70,14 @@ public class AjoutActivity extends AppCompatActivity {
         String marque = editMarque.getText().toString();
         String quantite = editQuantite.getText().toString();
         String date = editDate.getText().toString();
+
         try{
-
-            File file = new File("C:\\Users\\marie\\AndroidStudioProjects\\Eko\\app\\src\\main\\assets\\data.txt");
-            if (!file.canWrite()) {
-                file.setWritable(true);
-            }
-
-            if (!file.canExecute()) {
-                file.setExecutable(true);
-            }
-            FileOutputStream os = new FileOutputStream(file, true);
-            os.write(nom.getBytes());
-            os.write(marque.getBytes());
-            os.write(quantite.getBytes());
-            os.write(date.getBytes());
-            os.close();
+            File file = new File("entrees.txt");
+            FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write("Bonjour");
+            bw.close();
+            fw.close();
         }
         catch(IOException ex)
         {

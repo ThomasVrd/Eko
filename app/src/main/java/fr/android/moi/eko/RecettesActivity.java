@@ -4,16 +4,46 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
+import android.widget.TextView;
+
+import java.io.IOException;
+import java.util.Scanner;
 
 public class RecettesActivity extends AppCompatActivity{
+
+    private Scanner x;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recettes);
+
+        final Button buttonEntrees = findViewById(R.id.ButtonEntrees);
+        buttonEntrees.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                showRecettes("entrees");
+            }
+        });
+        final Button buttonPlats = findViewById(R.id.ButtonPlats);
+        buttonPlats.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                showRecettes("plats");
+            }
+        });
+        final Button buttonDesserts = findViewById(R.id.ButtonDesserts);
+        buttonDesserts.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                showRecettes("desserts");
+            }
+        });
+        final Button buttonTout = findViewById(R.id.ButtonTous);
+        buttonTout.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                showRecettes("tout");
+            }
+        });
     }
 
     public void myClickHandler1(View view)
@@ -40,5 +70,45 @@ public class RecettesActivity extends AppCompatActivity{
                 startActivity(intent3);
                 break;
         }
+    }
+
+   /* public void Click (View view)
+    {
+        switch(view.getId())
+        {
+            case R.id.buttonEntrees:
+                showRecettes("entrees");
+                break;
+            case R.id.buttonPlats:
+                showRecettes("plats");
+                break;
+            case R.id.buttonDesserts:
+                showRecettes("desserts");
+                break;
+            case R.id.buttonTous:
+                showRecettes("tout");
+                break;
+        }
+    }*/
+
+    public void showRecettes(String type)
+    {
+        TextView textRecettes = (TextView) findViewById(R.id.textRecettes);
+        String text = "";
+        try
+        {
+            x = new Scanner(this.getAssets().open("entrees.txt"));
+            while(x.hasNext())
+            {
+                String a = x.nextLine();
+                text = text + a + "\n";
+            }
+        }
+        catch(IOException ex)
+        {
+            ex.printStackTrace();
+        }
+
+        textRecettes.setText(text);
     }
 }
