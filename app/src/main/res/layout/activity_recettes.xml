@@ -22,26 +22,28 @@
         tools:layout_editor_absoluteX="1dp">
 
         <Button
-            android:id="@+id/buttonTous"
+            android:id="@+id/ButtonTous"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Tout" />
 
         <Button
-            android:id="@+id/buttonEntrees"
+            android:id="@+id/ButtonEntrees"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Entrées" />
+
         <Button
-            android:id="@+id/buttonPlats"
+            android:id="@+id/ButtonPlats"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Plats" />
+
         <Button
-            android:id="@+id/buttonDesserts"
+            android:id="@+id/ButtonDesserts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -124,6 +126,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textRecettes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="24sp" />
         </LinearLayout>
     </ScrollView>
 
