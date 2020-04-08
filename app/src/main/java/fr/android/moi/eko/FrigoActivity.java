@@ -75,7 +75,7 @@ public class FrigoActivity extends AppCompatActivity {
                 String c = x.next();
 
                 text[i] = text[i] + a + " " + b + " " + c + "\n  " ;
-                //img[i] = d;
+                //img[i] = d; mettre le lien de l'image
                 i++;
 
             }
