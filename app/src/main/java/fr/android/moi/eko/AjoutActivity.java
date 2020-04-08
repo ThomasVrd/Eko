@@ -3,6 +3,7 @@ package fr.android.moi.eko;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,14 +14,14 @@ import java.util.Date;
 
 public class AjoutActivity extends AppCompatActivity {
 
-    DatabaseHelper myDb;
-    EditText editNom, editMarque, editQuantite, editDate;
+    //DatabaseHelper myDb;
+   // EditText editNom, editMarque, editQuantite, editDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajout);
-        myDb = new DatabaseHelper(this);
+       // myDb = new DatabaseHelper(this);
     }
 
     public void myClickHandler3(View view)
@@ -47,17 +48,6 @@ public class AjoutActivity extends AppCompatActivity {
                 startActivity(intent3);
                 break;
             case R.id.ButtonAjout:
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
-                String date = dateFormat.format(editDate.getText());
-                boolean insert = myDb.insertData(editNom.getText().toString(), editMarque.getText().toString(), editQuantite.getText().toString(), date);
-                /*if(insert == true)
-                {
-                    Log.i("insert ?", "oui");
-                }
-                else
-                {
-                    Log.i("insert ?", "non");
-                }*/
                 Intent intent4 = new Intent(getApplicationContext(), FrigoActivity.class);
                 startActivity(intent4);
                 break;

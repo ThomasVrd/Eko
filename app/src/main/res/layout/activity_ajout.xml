@@ -106,7 +106,7 @@
             android:id="@+id/EditTextDate"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:inputType="date"
+            android:inputType="textShortMessage"
             android:text="Date de péremption" />
 
         <Button

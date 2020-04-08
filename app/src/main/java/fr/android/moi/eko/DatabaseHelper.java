@@ -12,7 +12,7 @@ import java.sql.Date;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String db_name = "Eko.db";
-    public static final String table_name = "Frigo";
+    public static final String table_name = "FrigoBis";
     public static final String Produit_ID = "ID";
     public static final String Produit_nom = "Nom";
     public static final String Produit_marque = "Marque";
@@ -25,7 +25,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + table_name + "(ID INTEGER PRIMARY KEY AUTOINCREMENT ,Nom TEXT, Marque TEXT, Quantite INTEGER, Date  DATE)");
+        db.execSQL("create table " + table_name + "(ID INTEGER PRIMARY KEY AUTOINCREMENT ,Nom TEXT, Marque TEXT, Quantite INTEGER, Date  TEXT)");
     }
 
     @Override
@@ -43,13 +43,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(Produit_quantite, quantite);
         contentValues.put(Produit_peremption, peremption);
         db.beginTransaction();
-        try{
-            long result = db.insert(table_name, null, contentValues);
-            db.setTransactionSuccessful();
-        }
-        finally{
-            db.endTransaction();
-        }
+        long result = db.insert(table_name, null, contentValues);
+        db.setTransactionSuccessful();
+        db.endTransaction();
         return true;
     }
 }
