@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
@@ -72,13 +73,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void readFile() throws IOException {
 
+        String text= "";
         TextView editRead = (TextView) findViewById(R.id.editRead);
-        InputStream is =this.getAssets().open("Data.txt");
-        int size = is.available();
-        byte[] buffer = new byte[size];
-        is.read(buffer);
-        is.close();
-        String text = new String(buffer);
+        try{
+           // InputStream is = new FileInputStream("/")
+            InputStream is =this.getAssets().open("data.txt");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            text = new String(buffer);
+        }
+        catch(IOException ex)
+        {
+            ex.printStackTrace();
+        }
         editRead.setText(text);
        /* x = new Scanner("C:\\Users\\marie\\AndroidStudioProjects\\Eko\\data.txt");
         while(x.hasNext()){
