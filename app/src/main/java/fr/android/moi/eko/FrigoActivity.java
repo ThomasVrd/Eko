@@ -56,14 +56,21 @@ public class FrigoActivity extends AppCompatActivity {
     public void readFile()
     {
         TextView editproduit1 = (TextView) findViewById(R.id.produit1);
-        String text = "";
+        TextView produit1 = (TextView) findViewById(R.id.textView2);
+        TextView produit2 = (TextView) findViewById(R.id.textView3);
+        TextView produit3 = (TextView) findViewById(R.id.textView4);
+
+        String[] text = new String[]{"", "", ""};
+        int i=0;
         try{
             x = new Scanner(this.getAssets().open("data.txt"));
             while(x.hasNext()){
                 String a = x.next();
                 String b = x.next();
                 String c = x.next();
-                text = text + a + " " + b + " " + c + "\n" ;
+                text[i] = text[i] + a + " " + b + " " + c + "\n  " ;
+                i++;
+
             }
 
             /*InputStream is =this.getAssets().open("data.txt");
@@ -80,6 +87,9 @@ public class FrigoActivity extends AppCompatActivity {
 
 
 
-        editproduit1.setText(text);
+        produit1.setText(text[0]);
+        produit2.setText(text[1]);
+        produit3.setText(text[2]);
+
     }
 }
